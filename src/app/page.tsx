@@ -159,7 +159,7 @@ export default function HomePage() {
     },
     {
       text: "With WebScape, our website is running smoothly, and their local support means we never have to wait long for help.",
-      name: "Carlos Mendoza, Owner of Cafe Conecta"
+      name: "Carlos Mendoza, Owner of Cafe Conectas"
     },
     {
       text: "They took care of our IT headaches, allowing us to focus on growth. Truly our IT partner in every sense.",

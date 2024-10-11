@@ -1,101 +1,148 @@
-import Image from "next/image";
+// src/app/page.tsx
+'use client';
 
-export default function Home() {
+import Link from "next/link";
+import { FaLaptopCode, FaRegLightbulb, FaUsers } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 flex flex-col items-center">
+      {/* Header */}
+      <header className="w-full max-w-6xl p-6 flex items-center justify-between bg-white/90 backdrop-blur-md shadow-lg rounded-full mt-4">
+        <h1 className="text-3xl font-bold text-gray-800 tracking-wide">
+          Web<span className="text-blue-600">Scape</span>
+        </h1>
+        <div className="flex space-x-4">
+          <Link
+            href="/auth/signin"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-full shadow-lg transition duration-300 ease-in-out"
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Sign In
+          </Link>
+          <Link
+            href="/auth/signup"
+            className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-5 rounded-full shadow-lg transition duration-300 ease-in-out"
           >
-            Read our docs
-          </a>
+            Sign Up
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </header>
+
+      {/* Hero Section */}
+      <motion.div
+        className="max-w-5xl w-full p-10 text-center flex flex-col items-center mt-12"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-6xl font-extrabold text-gray-800 mb-6 leading-tight drop-shadow-lg">
+          Create Stunning Websites with <span className="text-blue-600">WebScape</span>
+        </h2>
+        <p className="text-xl text-gray-700 mb-8 max-w-3xl">
+          Our all-in-one platform lets you design beautiful websites effortlessly. Whether you need a personal portfolio, an e-commerce site, or a business hub, we've got you covered.
+        </p>
+        <div className="flex flex-wrap justify-center gap-6">
+          <Link
+            href="/auth/signup"
+            className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
+          >
+            Start Building
+          </Link>
+          <Link
+            href="/features"
+            className="bg-white text-blue-600 font-semibold py-4 px-8 rounded-full shadow-lg border border-blue-600 transition duration-300 ease-in-out hover:bg-blue-50 transform hover:-translate-y-1 hover:scale-105"
+          >
+            Learn More
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* Features Section */}
+      <motion.div
+        className="max-w-5xl w-full px-10 mt-24 text-center"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.5 }}
+      >
+        <h3 className="text-4xl font-bold text-gray-800 mb-12 drop-shadow-lg">Why Choose WebScape?</h3>
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-3">
+          {[
+            {
+              icon: <FaLaptopCode className="text-blue-500 text-6xl mb-4 drop-shadow-md" />,
+              title: "Easy-to-Use Builder",
+              description: "Design your website with a user-friendly drag-and-drop interface. No coding required!"
+            },
+            {
+              icon: <FaRegLightbulb className="text-blue-500 text-6xl mb-4 drop-shadow-md" />,
+              title: "Creative Templates",
+              description: "Choose from a range of stunning templates tailored to your industry and style."
+            },
+            {
+              icon: <FaUsers className="text-blue-500 text-6xl mb-4 drop-shadow-md" />,
+              title: "Grow Your Audience",
+              description: "Built-in SEO tools and marketing integrations help you reach more people."
+            }
+          ].map((feature, index) => (
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105">
+              <div className="flex justify-center">{feature.icon}</div>
+              <h4 className="text-2xl font-bold text-gray-800 mt-4">{feature.title}</h4>
+              <p className="text-gray-600 mt-2">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Testimonial Section */}
+      <motion.div
+        className="mt-24 max-w-5xl mx-auto grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.2 }}
+      >
+        <h3 className="text-4xl font-bold text-gray-800 mb-8 text-center w-full col-span-1 md:col-span-3 drop-shadow-lg">What Our Clients Say</h3>
+        {[
+          { text: "WebScape made building my portfolio a breeze!", name: "Jane Doe" },
+          { text: "Our sales doubled after launching our e-commerce site with WebScape.", name: "John Smith" },
+          { text: "I got my website up and running in minutes. Highly recommend!", name: "Sara Lee" }
+        ].map((testimonial, index) => (
+          <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">
+            <p className="text-gray-600 italic mb-4">"{testimonial.text}"</p>
+            <p className="text-blue-600 font-semibold">{testimonial.name}</p>
+          </div>
+        ))}
+      </motion.div>
+
+      {/* CTA Banner */}
+      <div className="bg-gradient-to-r from-blue-500 to-indigo-500 py-16 w-full text-center mt-24">
+        <h3 className="text-4xl font-bold text-white mb-4">Ready to build your dream website?</h3>
+        <p className="text-white mb-8">Join thousands of happy customers using WebScape.</p>
+        <Link
+          href="/auth/signup"
+          className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          Get Started for Free
+        </Link>
+      </div>
+
+      {/* Footer */}
+      <footer className="w-full bg-gradient-to-r from-blue-50 to-indigo-100 py-8 text-center text-gray-500 text-sm shadow-inner mt-24">
+        <p>
+          © 2024 WebScape. All rights reserved. |{" "}
+          <Link href="/privacy" className="text-blue-600 hover:underline">
+            Privacy Policy
+          </Link>
+          {" | "}
+          <Link href="/terms" className="text-blue-600 hover:underline">
+            Terms of Service
+          </Link>
+        </p>
+        <p className="mt-4">
+          Follow us: 
+          <a href="#" className="ml-2 text-blue-600 hover:text-blue-800 transition">Twitter</a> | 
+          <a href="#" className="ml-2 text-blue-600 hover:text-blue-800 transition">LinkedIn</a>
+        </p>
       </footer>
-    </div>
+    </main>
   );
 }

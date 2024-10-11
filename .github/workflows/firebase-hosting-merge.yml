@@ -49,3 +49,5 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEBDEV_LANDING }}'
           projectId: 'webdev-landing'  # Replace with your actual Firebase project ID
+          channelId: 'preview'  # Add this line
+          expires: 7d

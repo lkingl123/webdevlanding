@@ -16,8 +16,8 @@ jobs:
       - name: Install dependencies
         run: npm install  # Ensure this step is present
 
-      - name: Build project
-        run: npm run build
+      - name: Check Environment Variables
+        run: echo "API Key: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }} (Length: ${ { secrets.NEXT_PUBLIC_FIREBASE_API_KEY | length }} characters)"
         env:
           NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
           NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}

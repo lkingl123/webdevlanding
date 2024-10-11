@@ -72,7 +72,7 @@ export default function HomePage() {
             href="/auth/signup"
             className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-5 rounded-full shadow-lg transition duration-300 ease-in-out"
           >
-            Sign Upppp
+            Sign Up
           </Link>
         </div>
       </header>
@@ -183,11 +183,12 @@ export default function HomePage() {
         <h3 className="text-4xl font-bold text-white mb-4 drop-shadow-lg">Ready to build your dream website?</h3>
         <p className="text-white mb-8">Join thousands of happy customers using WebScape.</p>
         <Link
-          href="/features"
-          className="bg-white text-blue-600 font-semibold py-4 px-8 rounded-full shadow-md border border-blue-600 transition duration-300 ease-in-out hover:bg-blue-50 transform hover:-translate-y-1 hover:scale-105"
-        >
-          Get Started here
-        </Link>
+  href="/features"
+  className="bg-white text-blue-600 font-semibold py-4 px-8 rounded-full shadow-md border border-blue-600 transition duration-300 ease-in-out hover:bg-blue-100 hover:text-blue-700 transform hover:-translate-y-1 hover:scale-105 z-10 relative !important"
+>
+  Get Started here
+</Link>
+
       </div>
 
       {/* Footer with Wave Shape */}

@@ -66,7 +66,7 @@ export default function HomePage() {
             href="/auth/signin"
             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-full shadow-lg transition duration-300 ease-in-out"
           >
-            Sign In testimonial
+            Sign In
           </Link>
           <Link
             href="/auth/signup"

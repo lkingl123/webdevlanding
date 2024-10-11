@@ -163,7 +163,7 @@ export default function HomePage() {
     },
     {
       text: "They took care of our IT headaches, allowing us to focus on growth. Truly our IT partner in every sense.",
-      name: "Jessica Lee, Operations Manager at GreenGrowth"
+      name: "Jessica Le, Operations Manager at GreenGrowth"
     }
   ].map((testimonial, index) => (
     <motion.div

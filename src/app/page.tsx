@@ -16,7 +16,7 @@ export default function HomePage() {
         x: ["0%", "10%", "-5%", "0%"],
         y: ["0%", "-10%", "5%", "0%"],
         transition: {
-          duration: 15,
+          duration: 12,
           ease: "easeInOut",
           repeat: Infinity,
           repeatType: "mirror",

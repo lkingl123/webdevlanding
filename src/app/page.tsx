@@ -5,6 +5,8 @@ import Link from "next/link";
 import { FaLaptopCode, FaRegLightbulb, FaUsers } from "react-icons/fa";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function HomePage() {
   // Floating animation logic for smooth motion
@@ -57,25 +59,7 @@ export default function HomePage() {
 
 
       {/* Header */}
-      <header className="w-full max-w-6xl p-6 flex items-center justify-between bg-white/80 backdrop-blur-md shadow-lg rounded-full mt-4">
-        <h1 className="text-3xl font-bold text-gray-800 tracking-wide">
-          Web<span className="text-blue-600">Scape</span>
-        </h1>
-        <div className="flex space-x-4">
-          <Link
-            href="/auth/signin"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-full shadow-lg transition duration-300 ease-in-out"
-          >
-            Sign In
-          </Link>
-          <Link
-            href="/auth/signup"
-            className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-5 rounded-full shadow-lg transition duration-300 ease-in-out"
-          >
-            Sign Up
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <motion.div
@@ -191,24 +175,7 @@ export default function HomePage() {
 
       </div>
 
-      {/* Footer with Wave Shape */}
-      <footer className="w-full bg-gradient-to-r from-blue-50 to-indigo-100 py-12 text-center text-gray-500 text-sm shadow-inner mt-24">
-        <p>
-          © 2024 WebScape. All rights reserved. |{" "}
-          <Link href="/privacy" className="text-blue-600 hover:underline">
-            Privacy Policy
-          </Link>
-          {" | "}
-          <Link href="/terms" className="text-blue-600 hover:underline">
-            Terms of Service
-          </Link>
-        </p>
-        <p className="mt-4">
-          Follow us: 
-          <a href="#" className="ml-2 text-blue-600 hover:text-blue-800 transition">Twitter</a> | 
-          <a href="#" className="ml-2 text-blue-600 hover:text-blue-800 transition">LinkedIn</a>
-        </p>
-      </footer>
+      <Footer />
     </main>
   );
 }

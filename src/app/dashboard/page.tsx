@@ -67,7 +67,7 @@ export default function Dashboard() {
                 >
                     <h2 className="text-4xl font-bold text-gray-800 mb-6">No Website Linked</h2>
                     <p className="text-lg text-gray-700 mb-8">
-                        Add your website to start tracking analytics. Link your website to view insights, track traffic sources, and monitor user behavior.
+                        Add your website to start tracking analytics. Link your website to view insights, track traffic sources, and monitor user behaviors.
                     </p>
                 </motion.div>
             )}

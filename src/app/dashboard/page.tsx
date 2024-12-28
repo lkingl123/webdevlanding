@@ -65,13 +65,6 @@ export default function Dashboard() {
           <p className="text-lg text-gray-700 mb-8">
             Add your website to start tracking analytics. Link your website to view insights, track traffic sources, and monitor user behavior.
           </p>
-          <a
-            href={testWebsite}
-            target="_blank"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out"
-          >
-            Add your website to link
-          </a>
         </motion.div>
       )}
 
